@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import CountdownTimer from '@/components/CountdownTimer';
+import Header from '@/components/Header';
 import heroImage from '@/assets/hero-pulsebar.jpg';
 import { 
   Zap, 
@@ -10,7 +11,9 @@ import {
   Instagram,
   Users,
   Trophy,
-  Gift
+  Gift,
+  Mail,
+  MessageCircle
 } from 'lucide-react';
 
 const Index = () => {
@@ -20,8 +23,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       {/* Hero Section */}
       <section 
+        id="home"
         className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(237,242,247,0.9) 50%, rgba(15,23,41,0.85) 100%), url(${heroImage})`,
@@ -50,7 +55,7 @@ const Index = () => {
       </section>
 
       {/* About the Challenge */}
-      <section className="py-24 md:py-32 bg-gradient-winter">
+      <section id="challenge" className="py-24 md:py-32 bg-gradient-winter scroll-mt-20">
         <div className="container mx-auto px-6 max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 animate-fade-in-up">
             The Winter Arc Challenge
@@ -67,7 +72,7 @@ const Index = () => {
       </section>
 
       {/* Why PulseBar - Features */}
-      <section className="py-24 md:py-32 bg-background">
+      <section id="features" className="py-24 md:py-32 bg-background scroll-mt-20">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-16 animate-fade-in-up">
             Why PulseBar?
@@ -117,7 +122,7 @@ const Index = () => {
       </section>
 
       {/* Preorder Founder's Batch */}
-      <section id="preorder" className="py-24 md:py-32 bg-gradient-winter">
+      <section id="preorder" className="py-24 md:py-32 bg-gradient-winter scroll-mt-20">
         <div className="container mx-auto px-6 max-w-5xl">
           <Card className="p-10 md:p-16 shadow-premium bg-card border-border">
             <div className="text-center">
@@ -186,7 +191,7 @@ const Index = () => {
       </section>
 
       {/* Creator Challenge */}
-      <section className="py-24 md:py-32 bg-background">
+      <section id="creator" className="py-24 md:py-32 bg-background scroll-mt-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 mx-auto mb-8 flex items-center justify-center rounded-full bg-secondary">
@@ -228,7 +233,7 @@ const Index = () => {
       </section>
 
       {/* Community */}
-      <section className="py-24 md:py-32 bg-gradient-winter">
+      <section id="community" className="py-24 md:py-32 bg-gradient-winter scroll-mt-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-20 h-20 mx-auto mb-8 flex items-center justify-center rounded-full bg-secondary">
@@ -276,11 +281,84 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-background border-t border-border">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
-            © 2025 PulseBar. Fueling the Winter Arc Challenge.
-          </p>
+      <footer className="py-16 bg-background border-t border-border">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            {/* Brand */}
+            <div>
+              <h3 className="text-xl font-bold text-foreground mb-4">PulseBar</h3>
+              <p className="text-muted-foreground mb-4">
+                The cleanest protein bar powering the Winter Arc Challenge.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                © 2025 PulseBar. All rights reserved.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
+                Quick Links
+              </h4>
+              <div className="space-y-2">
+                <a href="#home" className="block text-muted-foreground hover:text-accent transition-colors">
+                  Home
+                </a>
+                <a href="#challenge" className="block text-muted-foreground hover:text-accent transition-colors">
+                  The Challenge
+                </a>
+                <a href="#features" className="block text-muted-foreground hover:text-accent transition-colors">
+                  Why PulseBar
+                </a>
+                <a href="#preorder" className="block text-muted-foreground hover:text-accent transition-colors">
+                  Preorder
+                </a>
+                <a href="#creator" className="block text-muted-foreground hover:text-accent transition-colors">
+                  Creator Challenge
+                </a>
+              </div>
+            </div>
+
+            {/* Support */}
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
+                Support
+              </h4>
+              <div className="space-y-3">
+                <a 
+                  href="mailto:support@pulsebar.com" 
+                  className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  support@pulsebar.com
+                </a>
+                <a 
+                  href="#" 
+                  className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp Support
+                </a>
+              </div>
+              <div className="mt-6 space-y-2">
+                <a href="#" className="block text-sm text-muted-foreground hover:text-accent transition-colors">
+                  FAQs
+                </a>
+                <a href="#" className="block text-sm text-muted-foreground hover:text-accent transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="#" className="block text-sm text-muted-foreground hover:text-accent transition-colors">
+                  Terms of Service
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-8 border-t border-border text-center">
+            <p className="text-sm text-muted-foreground">
+              Fueling the Winter Arc Challenge · Oct 1, 2025 – Feb 28, 2026
+            </p>
+          </div>
         </div>
       </footer>
     </div>

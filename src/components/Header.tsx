@@ -31,7 +31,7 @@ const Header = () => {
 
   const navLinks = [
     { label: 'Home', action: scrollToTop },
-    { label: 'The Challenge', id: 'challenge' },
+    { label: 'The Challenge', path: '/the-challenge' },
     { label: 'PulseBar', path: '/pulsebar' },
     { label: 'Creator Challenge', id: 'creator' },
     { label: 'Community', id: 'community' },
